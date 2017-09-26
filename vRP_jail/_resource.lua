@@ -4,10 +4,10 @@ description "vrp_jail"
 dependency "vrp"
 
 client_scripts{ 
-  "client/Tunnel.lua",
-  "client/Proxy.lua",
+  "lib/Tunnel.lua",
+  "lib/Proxy.lua",
 
 server_scripts{ 
   "@vrp/lib/utils.lua",
-  "server.lua",
+  "server.lua"
 }
