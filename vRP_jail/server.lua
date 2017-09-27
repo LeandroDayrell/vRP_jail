@@ -2,8 +2,7 @@ local Tunnel = module("vrp", "lib/Tunnel")
 local Proxy = module("vrp", "lib/Proxy")
 
 vRP = Proxy.getInterface("vRP")
-vRPclient = Tunnel.getInterface("vRP","vrp_jail")
-BMclient = Tunnel.getInterface("vrp_jail","vrp_jail")
+vRPclient = Tunnel.getInterface("vRP","vRP_jail")
 
 local Lang = module("vrp", "lib/Lang")
 local cfg = module("vrp", "cfg/base")
