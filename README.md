@@ -17,7 +17,7 @@ After the time chosen by the police officer, the player will be teleported to th
 
 
 Português PT  
-////  O Script foi criado recentemente, estou fazendo alguns ajustes nele para deixar mais acessivel para as pessoas
+////  O Script foi criado recentemente, estou fazendo alguns ajustes nele para deixar mais acessivel para as pessoas.
 Peço que sempre estejam acessando está pagina para ver se existe alguma atualização
 O Script funciona de tal maneira que o Policial que queira enviar algum prisioneiro para a grande prisão, primeiro deverá algemar o jogador em seguida escolher o tempo que o jogador deverá ficar preso.
 O jogadores que forem enviados para prisão irão ficar na mesma sela mas estarão algemados, para que não ocorra nenhum conflito !
