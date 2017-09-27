@@ -12,46 +12,44 @@ local lang = Lang.new(module("vrp", "cfg/lang/"..cfg.lang) or {})
 
 
 
-----------------
--- ENVIAR PARA PRISÃO POR 5 MINUTOS
-local choice_tpprisiona = {function(player,choice) -- 1. abre funcao que vai ser realizada ao clicar o botao, primeiro argumento do botao  
-  vRPclient.getNearestPlayer(player,{10},function(nplayer) -- 2. abre funcao do que vai ser realizado com o nplayer - player mais proximo
-    local nuser_id = vRP.getUserId(nplayer) -- pega o id do player mais proximo
-    if nuser_id ~= nil then -- 3. abre if se o id nao for nil
-      vRPclient.isHandcuffed(nplayer,{}, function(handcuffed)  -- 4. abre funcao que checa se o usuario ta algemado devolve true or false na variavel da function
-        if handcuffed then -- 5. abre if algemado
+local choice_tpprisiona = {function(player,choice) 
+  vRPclient.getNearestPlayer(player,{10},function(nplayer) 
+    local nuser_id = vRP.getUserId({nplayer}) 
+    if nuser_id ~= nil then 
+      vRPclient.isHandcuffed(nplayer,{}, function(handcuffed)  
+        if handcuffed then 
           vRPclient.teleport(nplayer,{1641.5477294922,2570.4819335938,45.564788818359})
-        else -- 5. se nao estiver
-          vRPclient.notify(player,{lang.police.not_handcuffed()})
-        end -- 5. termina if
-        SetTimeout(300000, function() -- 6. abre funcao de timeout
+          SetTimeout(300000, function()
             vRPclient.teleport(nplayer,{425.7607421875,-978.73425292969,30.709615707397})
             vRPclient.setHandcuffed(player,{false})
-        end) -- 6. acaba a funcao de timeout
-      end) -- 4. acaba a funcao de checar algemado
-    else -- 3. se nao tiver user id
+          end) 
+        else 
+          vRPclient.notify(player,{lang.police.not_handcuffed()})
+        end  
+      end) 
+    else
       vRPclient.notify(player,{lang.common.no_player_near()})
-    end -- 3. acaba if do id
-  end) -- 2. acaba a funcao do player mais proximo
+    end 
+  end) 
 
-end,lang.police.menu.tpprision.description()} -- 1. acaba o botao e poe o segundo argumento, a descricao.
+end,lang.police.menu.tpprision.description()}
 --------------
 -- ENVIAR PARA PRISÃO POR 10 MINUTOS
 
           local choice_tpprisionb = {function(player,choice) -- 1. abre funcao que vai ser realizada ao clicar o botao, primeiro argumento do botao  
   vRPclient.getNearestPlayer(player,{10},function(nplayer) -- 2. abre funcao do que vai ser realizado com o nplayer - player mais proximo
-    local nuser_id = vRP.getUserId(nplayer) -- pega o id do player mais proximo
+    local nuser_id = vRP.getUserId({nplayer})  -- pega o id do player mais proximo
     if nuser_id ~= nil then -- 3. abre if se o id nao for nil
       vRPclient.isHandcuffed(nplayer,{}, function(handcuffed)  -- 4. abre funcao que checa se o usuario ta algemado devolve true or false na variavel da function
         if handcuffed then -- 5. abre if algemado
           vRPclient.teleport(nplayer,{1641.5477294922,2570.4819335938,45.564788818359})
+          SetTimeout(600000, function() -- 6. TIME
+            vRPclient.teleport(nplayer,{425.7607421875,-978.73425292969,30.709615707397})
+            vRPclient.setHandcuffed(player,{false})
+            end)
         else -- 5. se nao estiver
           vRPclient.notify(player,{lang.police.not_handcuffed()})
         end -- 5. termina if
-        SetTimeout(600000, function() -- 6. TIME
-            vRPclient.teleport(nplayer,{425.7607421875,-978.73425292969,30.709615707397})
-            vRPclient.setHandcuffed(player,{false})
-        end) -- 6. acaba a funcao de timeout
       end) -- 4. acaba a funcao de checar algemado
     else -- 3. se nao tiver user id
       vRPclient.notify(player,{lang.common.no_player_near()})
@@ -64,18 +62,18 @@ end,lang.police.menu.tpprision.description()} -- 1. acaba o botao e poe o segund
 
      local choice_tpprisionc = {function(player,choice) -- 1. abre funcao que vai ser realizada ao clicar o botao, primeiro argumento do botao  
   vRPclient.getNearestPlayer(player,{10},function(nplayer) -- 2. abre funcao do que vai ser realizado com o nplayer - player mais proximo
-    local nuser_id = vRP.getUserId(nplayer) -- pega o id do player mais proximo
+    local nuser_id = vRP.getUserId({nplayer})  -- pega o id do player mais proximo
     if nuser_id ~= nil then -- 3. abre if se o id nao for nil
       vRPclient.isHandcuffed(nplayer,{}, function(handcuffed)  -- 4. abre funcao que checa se o usuario ta algemado devolve true or false na variavel da function
         if handcuffed then -- 5. abre if algemado
           vRPclient.teleport(nplayer,{1641.5477294922,2570.4819335938,45.564788818359})
-        else -- 5. se nao estiver
-          vRPclient.notify(player,{lang.police.not_handcuffed()})
-        end -- 5. termina if
-        SetTimeout(900000, function() -- 6. abre funcao de timeout
+          SetTimeout(900000, function() -- 6. abre funcao de timeout
             vRPclient.teleport(nplayer,{425.7607421875,-978.73425292969,30.709615707397})
             vRPclient.setHandcuffed(player,{false})
         end) -- 6. acaba a funcao de timeout
+        else -- 5. se nao estiver
+          vRPclient.notify(player,{lang.police.not_handcuffed()})
+        end -- 5. termina if
       end) -- 4. acaba a funcao de checar algemado
     else -- 3. se nao tiver user id
       vRPclient.notify(player,{lang.common.no_player_near()})
@@ -89,18 +87,18 @@ end,lang.police.menu.tpprision.description()} -- 1. acaba o botao e poe o segund
 -- ENVIAR PARA PRISÃO POR 25 MINUTO
 local choice_tpprision = {function(player,choice) -- 1. abre funcao que vai ser realizada ao clicar o botao, primeiro argumento do botao  
   vRPclient.getNearestPlayer(player,{10},function(nplayer) -- 2. abre funcao do que vai ser realizado com o nplayer - player mais proximo
-    local nuser_id = vRP.getUserId(nplayer) -- pega o id do player mais proximo
+    local nuser_id = vRP.getUserId({nplayer})  -- pega o id do player mais proximo
     if nuser_id ~= nil then -- 3. abre if se o id nao for nil
       vRPclient.isHandcuffed(nplayer,{}, function(handcuffed)  -- 4. abre funcao que checa se o usuario ta algemado devolve true or false na variavel da function
         if handcuffed then -- 5. abre if algemado
           vRPclient.teleport(nplayer,{1641.5477294922,2570.4819335938,45.564788818359})
-        else -- 5. se nao estiver
-          vRPclient.notify(player,{lang.police.not_handcuffed()})
-        end -- 5. termina if
-        SetTimeout(1500000, function() -- 6. abre funcao de timeout
+          SetTimeout(1500000, function() -- 6. abre funcao de timeout
             vRPclient.teleport(nplayer,{425.7607421875,-978.73425292969,30.709615707397})
             vRPclient.setHandcuffed(player,{false})
         end) -- 6. acaba a funcao de timeout
+        else -- 5. se nao estiver
+          vRPclient.notify(player,{lang.police.not_handcuffed()})
+        end -- 5. termina if
       end) -- 4. acaba a funcao de checar algemado
     else -- 3. se nao tiver user id
       vRPclient.notify(player,{lang.common.no_player_near()})
