@@ -33,31 +33,31 @@ local choice_tpprisiona = {function(player,choice)
 
 end,lang.police.menu.tpprision.description()}
 --------------
--- ENVIAR PARA PRISÃO POR 10 MINUTOS
+-- SEND PRISONER IN JAIL FOR 10 MINUTES
 
           local choice_tpprisionb = {function(player,choice) -- 1. abre funcao que vai ser realizada ao clicar o botao, primeiro argumento do botao  
   vRPclient.getNearestPlayer(player,{10},function(nplayer) -- 2. abre funcao do que vai ser realizado com o nplayer - player mais proximo
     local nuser_id = vRP.getUserId({nplayer})  -- pega o id do player mais proximo
     if nuser_id ~= nil then -- 3. abre if se o id nao for nil
-      vRPclient.isHandcuffed(nplayer,{}, function(handcuffed)  -- 4. abre funcao que checa se o usuario ta algemado devolve true or false na variavel da function
-        if handcuffed then -- 5. abre if algemado
+      vRPclient.isHandcuffed(nplayer,{}, function(handcuffed)  -- 4. here the handcuff function starts
+        if handcuffed then -- 5. if the player is handcuffed
           vRPclient.teleport(nplayer,{1641.5477294922,2570.4819335938,45.564788818359})
           SetTimeout(600000, function() -- 6. TIME
             vRPclient.teleport(nplayer,{425.7607421875,-978.73425292969,30.709615707397})
             vRPclient.setHandcuffed(player,{false})
             end)
-        else -- 5. se nao estiver
+        else -- 5. otherwise
           vRPclient.notify(player,{lang.police.not_handcuffed()})
-        end -- 5. termina if
-      end) -- 4. acaba a funcao de checar algemado
-    else -- 3. se nao tiver user id
+        end -- 5. End if
+      end) -- 4. handcuff checking function end
+    else -- 3. if you don't have a userid
       vRPclient.notify(player,{lang.common.no_player_near()})
     end -- 3. acaba if do id
-  end) -- 2. acaba a funcao do player mais proximo
+  end) -- 2. end of the nearest player checking function
 
 end,lang.police.menu.tpprision.description()} -- 1. acaba o botao e poe o segundo argumento, a descricao.
 ----------------------------
--- ENVIAR PARA PRISÃO POR 15 MINUTOS
+-- SEND PRISONER IN JAIL FOR 15 MINUTES
 
      local choice_tpprisionc = {function(player,choice) -- 1. abre funcao que vai ser realizada ao clicar o botao, primeiro argumento do botao  
   vRPclient.getNearestPlayer(player,{10},function(nplayer) -- 2. abre funcao do que vai ser realizado com o nplayer - player mais proximo
@@ -83,7 +83,7 @@ end,lang.police.menu.tpprision.description()} -- 1. acaba o botao e poe o segund
 
 
 
--- ENVIAR PARA PRISÃO POR 25 MINUTO
+-- SEND PRISONER IN JAIL FOR 25 MINUTES
 local choice_tpprision = {function(player,choice) -- 1. abre funcao que vai ser realizada ao clicar o botao, primeiro argumento do botao  
   vRPclient.getNearestPlayer(player,{10},function(nplayer) -- 2. abre funcao do que vai ser realizado com o nplayer - player mais proximo
     local nuser_id = vRP.getUserId({nplayer})  -- pega o id do player mais proximo

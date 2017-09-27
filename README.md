@@ -14,11 +14,11 @@
 
 
 English EN   
-////  Script was created recently, I'm still making some adjustments in it to make it more accessible to people
-I ask that you are always accessing this page to see if there is any update~.
-The Script works in such a way that the Police Officer who wants to send some prisoner to the great prison, must first handcuff the player then choose the time that the player should be arrested.
-Players who are sent to prison will be in the same saddle but will be handcuffed so no conflict will occur!
-After the time chosen by the police officer, the player will be teleported to the police station in the city center and will be free
+////  This script was created recently, I'm still making some adjustments in it to make it more accessible to people.
+Please, always come back here to see if i released any updates.~.
+The Script works in such a way that the Police Officer who wants to send some prisoner to the great prison, must first handcuff the player then choose the time that the player should stay in jail for.
+Players who are sent to the prison will be in the same saddle but will be handcuffed so no conflict will occur!
+After the time chosen by the police officer, the player will be teleported to the police station in the city center and will be free to go.
 -- Last updated: 09/27/2017
 
 
