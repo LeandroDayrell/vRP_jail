@@ -1,6 +1,16 @@
 # vRP_jail
 
 
+	ADD IN CFG/GROUPS.LUA   IN POLICE !!!:
+
+
+    "police.tpprisiona",
+    "police.tpprisionb",
+    "police.tpprisionc",
+    "police.tpprision",
+
+
+
 
 
 English EN   
