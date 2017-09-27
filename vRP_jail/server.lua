@@ -6,6 +6,7 @@ vRPclient = Tunnel.getInterface("vRP","vrp_jail")
 BMclient = Tunnel.getInterface("vrp_jail","vrp_jail")
 
 local Lang = module("vrp", "lib/Lang")
+local cfg = module("vrp", "cfg/base")
 local lang = Lang.new(module("vrp", "cfg/lang/"..cfg.lang) or {})
 
 
