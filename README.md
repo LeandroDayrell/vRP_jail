@@ -1,6 +1,10 @@
 # vRP_jail
 
 
+Primeiro sistema de prisão feita pro VRP 
+First prison system made for VRP
+
+
 	ADD IN CFG/GROUPS.LUA   IN POLICE !!!:
 
 
